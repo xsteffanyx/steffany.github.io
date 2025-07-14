@@ -1,0 +1,278 @@
+html {
+    background: url(images/Comp+1.gif) center center fixed;
+    background-size: cover;
+}
+
+body{
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+    width: 100vw;
+    height: 80vh;
+    user-select: none;
+}
+
+h1{
+    font-family: "Pinyon Script", cursive;
+    color: #ff54a4;
+    position: relative;
+    font-size: 1200%;
+    font-weight: 400;
+    text-align: center;
+    /* margin-right: 5%; */
+    letter-spacing: .3rem;
+    line-height: 14rem;
+    margin-top: 8%;
+    text-decoration: none;
+}
+
+h3{
+    font-family: "VT323", monospace;
+    color:  #000000;
+    font-size: 150%;
+    position: sticky;
+    margin-left: 12%;
+    text-align: left;
+    font-weight: 100;
+    margin: 0;
+    top: 0;
+    right: 0;
+    position: absolute;
+}
+
+/* h1 a:hover {
+    color: #ff54a4;
+    cursor: crosshair;
+} */
+
+/* #logo img{
+    position:  absolute;
+    max-width: 20%;
+    max-height: 20%;
+    margin-left: 86%;
+    margin-top: 10%;
+    cursor: crosshair;
+} */
+
+.navbar {
+    position: fixed;
+    bottom: 5.5%;
+    right: 0;
+    background: rgb(206, 255, 255);
+    color: rgb(3, 0, 0);
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 1px;
+    border: 2.5px solid #ff54a4;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.navbar a {
+    font-family: "VT323", monospace;
+    color: #030002;
+    text-align: right;
+    font-size: 150%;
+    text-decoration: none;
+    padding: 5px;
+}
+.navbar a:hover {
+    color: #ff54a4;
+    cursor: crosshair;
+}
+
+li{
+    list-style: none;
+}
+
+/*responsive*/
+
+.navbar-toggle {
+    display: none;
+    background: rgb(206, 255, 255);
+    color: rgb(3, 0, 0);
+    border: none;
+    padding: 10px;
+    cursor: crosshair;
+}
+
+
+.navbar-toggle svg {
+    width: 30px;
+    height: 30px;
+}
+
+ul{
+    padding-inline-start: 0px;
+}
+
+
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .navbar-toggle {
+        display: block;
+    }
+
+    .navbar-menu {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        position: absolute;
+        top: 50px; 
+        right: 10px;
+        background: rgb(206, 255, 255);
+        border: 2.5px solid #ff54a4;
+        padding: 10px;
+        z-index: 1000;
+    }
+
+
+    .navbar-menu.active {
+        display: flex;
+    }
+}
+
+/*music box*/
+.music-player {
+    bottom:  5.5%; 
+    position: fixed; 
+    left: 0;
+    font-family: "VT323", monospace;
+    text-align: center;
+    background: rgb(206, 255, 255);
+    padding: 1%;
+    border: 2.5px solid #ff54a4;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    cursor: crosshair;
+}
+.song-title {
+    margin-bottom: 1.5%;
+    font-size: 200%;
+    margin-bottom: 2%;
+}
+audio {
+    width: 100%;
+    /* filter: invert(100%); */
+    cursor: crosshair;
+    --seekbar-color: #ffecff; 
+    --controls-bg-color: #ffecff; 
+    --controls-color: #000000;
+}
+
+audio::-webkit-media-controls-panel {
+  background-color: var(--controls-bg-color);
+}
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-pause-button,
+audio::-webkit-media-controls-mute-button,
+audio::-webkit-media-controls-volume-slider-container,
+audio::-webkit-media-controls-timeline {
+  color: var(--controls-color);
+}
+audio::-webkit-media-controls-timeline {
+  background-color: var(--seekbar-color);
+}
+
+/*pop ups*/
+.button-container {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    background: #ffecff;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+.popup {
+    position: absolute;
+    width: 200px;
+    border: 2px solid #ff54a4;
+    background: rgb(206, 255, 255);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    z-index: 1000;
+}
+.popup-header {
+    background: rgb(255, 227, 251);
+    padding: 10px;
+    cursor: move;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "VT323", monospace;
+    font-size: 130%;
+}
+.popup-header span {
+    cursor: crosshair;
+}
+.popup-body {
+    padding: 10px;
+}
+button{
+    bottom: 0; 
+    border: 1px solid #ff54a4;
+    background: rgb(206, 255, 255);
+    font-family: "VT323", monospace;
+    font-size: 120%;
+    cursor: crosshair;
+}
+
+
+@keyframes crawl {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+@media (max-width: 600px) {
+    .button-wrapper {
+        display: flex;
+        white-space: nowrap;
+        animation: crawl 50s linear infinite;
+    }
+}
+
+/* @media (max-width: 600px) {
+    .button-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .button-container button {
+        flex: 1;
+        margin: 0 2px;
+    }
+} */
+
+
+.vt323-regular {
+    font-family: "VT323", monospace;
+    font-weight: 400;
+    font-style: normal;
+  }
+.pinyon-script-regular {
+    font-family: "Pinyon Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@media only screen and (max-width: 600px) {
+    h1{
+        font-size: 600%;
+        line-height: 6rem;
+        text-align: center;
+        /* margin-left: 3%; */
+        margin-top: 13%;
+        margin-left: 1%;
+    }
+    .music-player{
+        width: 100%;
+    }
+    .navbar{
+        bottom: 91.2%;
+    }
+}
